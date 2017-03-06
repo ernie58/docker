@@ -1,0 +1,21 @@
+//show all files
+//explain compose yml
+
+docker-compose up
+
+//Alter file app.py, changes should be reflected immediately, because of mounting
+
+// detached
+docker-compose up -d
+
+//running processes
+docker-compose ps
+
+// run one-off command for specific service
+docker-compose run web env
+
+//veel leuke commands
+docker-compose --help
+
+//compose file reference
+https://docs.docker.com/compose/compose-file/

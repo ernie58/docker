@@ -100,25 +100,25 @@ Niet enkel zijn website, maar ook zijn software. last-minute rewrite
 
 ## What are containers
 
-<img src="https://www.docker.com/sites/default/files/what_is_a_container.png" />
+<img src="https://www.docker.com/sites/default/files/what_is_a_container.png" style="max-height:250px;" />
 
 #VSLIDE
 
 ## containers vs virtual machines
 
-<img src="https://www.docker.com/sites/default/files/Container%402x.png">
+<img src="https://www.docker.com/sites/default/files/Container%402x.png"  style="max-height:250px;">
 
 #VSLIDE
 
 ## containers vs virtual machines
 
-<img src="https://www.docker.com/sites/default/files/VM%402x.png">
+<img src="https://www.docker.com/sites/default/files/VM%402x.png"  style="max-height:250px;">
 
 #VSLIDE
 
 ## Containers and VMs together are great
 
-<img src="https://www.docker.com/sites/default/files/containers-vms-together.png">
+<img src="https://www.docker.com/sites/default/files/containers-vms-together.png" style="max-height:250px;">
 
 #VSLIDE
 
@@ -131,6 +131,10 @@ Niet enkel zijn website, maar ook zijn software. last-minute rewrite
     - runs on every infrastructure
   - secure
     - isolate applications from infrastructure and each other
+
+#VSLIDE
+
+## DEMO
 
 #HSLIDE
 
@@ -184,19 +188,33 @@ volumes:
 
 #VSLIDE
 
-## Steps
-- Create a directory for the project
-- Create an app
-- Create a Dockerfiles
-- Create compose file
-- Build and run
-
-VSLIDE
-
-## Compose CLI reference
-
 ## Compose file reference
 - currently version 3 (recommended, compatible with docker swarm)
 - define services, networks and volumes
 - see official documentation
 - you can combine multiple compose file to extend each other (eg. for production)
+
+#HSLIDE
+
+## SWARM
+
+Nieuwe feature nu native in docker!  
+cluster management and orchestration features zoals loadbalancing, autoscaling, ...
+
+#VSLIDE
+
+## Manager nodes and worker nodes
+
+- A node is an instance of the Docker engine participating in the swarm
+- Worker nodes receive and execute tasks dispatched from manager nodes
+
+#VSLIDE
+
+- Setup can be defined in compose.yml files
+- (voorbeeld)[https://github.com/docker/example-voting-app/blob/master/docker-stack.yml]
+- docker stack deploy --compose-file docker-stack.yml APP_NAME
+
+#HSLIDE
+
+- all resources on https://docs.docker.com/
+- helemaal vernieuwd en up-to-date

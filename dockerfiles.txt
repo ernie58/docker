@@ -1,0 +1,54 @@
+# basic tutorial: bestaande containers
+######################################
+// verify installation is working
+docker run hello-world
+
+//start interactive with tty
+docker run -it ubuntu bash
+
+//list all running containers
+docker ps
+
+//list all containers
+docker ps -a
+
+//remove containers
+docker rm $(docker ps -aq)
+
+//restart example container
+docker restart 
+
+//show all images
+docker images
+
+//more usefull example, start a mysql server
+docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:latest
+
+//start another container and connect to the server
+// --rm, remove when exits
+// --link, make connection between containers
+
+docker run -it --link some-mysql:mysql --rm mysql sh -c 'exec mysql -h"$MYSQL_PORT_3306_TCP_ADDR" -P"$MYSQL_PORT_3306_TCP_PORT" -uroot -p"$MYSQL_ENV_MYSQL_ROOT_PASSWORD"'
+
+# nieuwe image builden
+######################
+
+docker run docker/whalesay cowsay boo
+
+# Docker file contents
+FROM docker/whalesay:latest
+RUN apt-get -y update && apt-get install -y fortunes
+CMD /usr/games/fortune -a | cowsay
+
+# run executes new temp container, cmd executes in final container
+
+# Build docker file
+docker build -t my-fancy-image .
+
+docker run my-fancy-image
+
+//Show all commands
+docker --help
+
+//docker build reference
+https://docs.docker.com/engine/reference/builder/
