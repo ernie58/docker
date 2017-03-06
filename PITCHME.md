@@ -24,7 +24,7 @@ Niet enkel zijn website, maar ook zijn software. last-minute rewrite
 - Swarm (beperkt)
 - ...
 
-HSLIDE
+#HSLIDE
 
 ## Docker platform: for developers
 - Build test, deploy and debug any language or stack without incompatibility or version conflict:
@@ -100,34 +100,30 @@ HSLIDE
 
 ## What are containers
 
-(what is a container)[https://www.docker.com/sites/default/files/what_is_a_container.png]
+<img src="https://www.docker.com/sites/default/files/what_is_a_container.png" />
+
+#VSLIDE
 
 ## containers vs virtual machines
 
-(Container) [https://www.docker.com/sites/default/files/Container%402x.png]
+<img src="https://www.docker.com/sites/default/files/Container%402x.png">
+
+#VSLIDE
 
 ## containers vs virtual machines
 
-(VM) [https://www.docker.com/sites/default/files/VM%402x.png]
+<img src="https://www.docker.com/sites/default/files/VM%402x.png">
 
 #VSLIDE
 
 ## Containers and VMs together are great
 
-(together) [https://www.docker.com/sites/default/files/containers-vms-together.png]
+<img src="https://www.docker.com/sites/default/files/containers-vms-together.png">
 
 #VSLIDE
 
 ## Containers
 
-- Containers include the application and all of its dependencies   
-- They share the kernel with other containers, running as isolated processes in user space on the host operating system.   
-- Docker containers are not tied to any specific infrastructure: they run on any computer, on any infrastructure, and in any cloud.  
-
-#VSLIDE
-
-## Containers
-troeven:  
   - lightweight
     - layered containers
     - shared kernel
@@ -136,10 +132,14 @@ troeven:
   - secure
     - isolate applications from infrastructure and each other
 
+#HSLIDE
+
 ## Docker compose
 - tool for defining and running multi-container Docker applications
 - file: docker-compose.yml
 - CLI: build and  run environment
+
+#VSLIDE
 
 ## A docker-compose.yml looks like this:
 ```
@@ -160,12 +160,16 @@ volumes:
   logvolume01: {}
   ```
 
+#VSLIDE
+
 ## with the CLI you can:
 - Start, stop and rebuild services
 - View the status of running services
 - Stream the log output of running services
 - Run a one-off command on a service
 - ...
+
+#VSLIDE
 
 ## Use cases
 - Development environments
@@ -174,7 +178,11 @@ volumes:
   - lately more and more production-oriented features
   - you can deploy to single instance engine or complete swarm
 
+#VSLIDE
+
 ## Demo
+
+#VSLIDE
 
 ## Steps
 - Create a directory for the project
@@ -183,6 +191,8 @@ volumes:
 - Create compose file
 - Build and run
 
+VSLIDE
+
 ## Compose CLI reference
 
 ## Compose file reference
@@ -190,11 +200,3 @@ volumes:
 - define services, networks and volumes
 - see official documentation
 - you can combine multiple compose file to extend each other (eg. for production)
-
-## het verschil tussen Docker machine en Docker for Mac, Windows,...
-
-De docker toolbox (machine, engine and compose)
-
-Docker machine spins VMs on virtualbox that contain docker engine and the boot2docker linux distro
-Docker for Mac is a native app, with symlinks for docker and docker-compose. It doesn't use Virtualbox, but Hyperkit (lightweight virtualisation) It sets up one VM for you, on wich it runs containers
-Docker for windows is the same as docker toolbox, but it uses Hyper-V, which conflicts with Virtualbox. It enables you to run containers on Windows directly.
